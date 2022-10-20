@@ -25,6 +25,9 @@ The server then can send multiple outcomes :
 - "UNSUPPORTED:*unsupported operations*\nSUPPORTED:*supported operations*" : meaning the *calculus* contains an operation that the server doesn't implement.
     - Here, the server specifies all unsupported operations found in the request to the client as well as all operations that the server supports.
     - All supported and unsupported operations are split by a ';' character and can be commented between parentheses.
+    - Multiple characters shall be considered as one operation.
+    - If *characters* are followed by a parenthese, it shall be considered as a function and marked as "*characters*()" in the unsupported operations.
+    - *i* and/or *j* characters can be considered as sqrt(-1) in case a server supports operation on complexes.
 - "RESULT:*value*" : meaning the server was able to compute all operations and return a result value.
 - "ERROR:*problem*" : meaning the server encountered a problem while computing the result.
     - *problem* is a message specifying the encountered problem.
