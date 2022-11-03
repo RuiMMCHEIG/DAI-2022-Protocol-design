@@ -1,5 +1,5 @@
 # Non-Standard Calculator Protocol
-## Overhall behavior
+## Overall behavior
 This protocol serves to transmit calculation requests and results between client and server.
 It operates via **TCP/IP** on **port 1111**.
 Client-side has to specifiy the server's hostname.
