@@ -3,6 +3,7 @@ package ch.heigvd.api.calc;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -70,8 +71,8 @@ public class Server {
 
         LOG.log(Level.INFO, "Getting a Reader and a Writer connected to the client socket...");
         try {
-            reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream(), "UTF-8"));
-            writer = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream(), "UTF-8"));
+            reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream(), StandardCharsets.UTF_8));
+            writer = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream(), StandardCharsets.UTF_8));
         }
         catch (IOException ex) {
             LOG.log(Level.SEVERE, ex.toString(), ex);
